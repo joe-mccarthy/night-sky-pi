@@ -1,7 +1,7 @@
 # Night Sky Pi
 
-[![Version Badge](https://img.shields.io/badge/Version-0.0.0-blue?style=for-the-badge)](https://codeberg.org/night-works/night-sky-pi/releases)
-[![Changelog Badge](https://img.shields.io/badge/Changelog-0.0.0-orange?style=for-the-badge)](https://codeberg.org/night-works/night-sky-pi/src/branch/main/CHANGELOG.md)
-![Coverage Badge](https://img.shields.io/badge/Coverage-60%-orange?style=for-the-badge)
-[![Python >= 3.8](https://img.shields.io/badge/python-3.8-blue.svg?style=for-the-badge)](https://www.python.org/downloads/release/python-380/)
-[![License Badge](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://codeberg.org/night-works/night-sky-pi/src/branch/main/LICENSE)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joe-mccarthy/night-sky-pi/build-test.yml?style=for-the-badge)
+![Coveralls](https://img.shields.io/coverallsCoverage/github/joe-mccarthy/night-sky-pi?style=for-the-badge)
+![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/joe-mccarthy_night-sky-pi?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/release/joe-mccarthy/night-sky-pi?sort=semver&style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/joe-mccarthy/night-sky-pi?style=for-the-badge)
