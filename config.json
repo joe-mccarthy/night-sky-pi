@@ -1,0 +1,60 @@
+{
+    "device" : {
+        "name" : "My Night Sky Pi",
+        "location" : {
+            "latitude" : 51.77655,
+            "longitude" : 0.11158
+        }
+    },
+    "logging": {        
+        "path": "./nsp/logs/",
+        "level": "INFO",
+        "format": {
+            "date": "%Y-%m-%d %H:%M:%S",
+            "output": "%(asctime)s | %(levelname)-7s | %(message)s"
+        },
+        "rotation": {
+            "size": 10000000,
+            "backup": 10
+        }
+    },
+    "data": {
+        "path": "./nsp/data"
+    },
+    "nsp" : {
+        "data": {
+            "path": "observations",
+            "house_keeping" : {
+                "delete_after" : 10
+            }
+        },
+        "logging": {
+            "file": "nsp.log",
+            "level" : "DEBUG"
+        },
+        "capture": {
+            "shutter": {
+                "initial": 250000,
+                "slowest": 15000000,
+                "fastest": 100
+            },
+            "gain": {
+                "initial": 1.0,
+                "lowest": 1.0,
+                "highest": 8.0
+            },
+            "white_balance": {
+                "red": 2.8,
+                "blue": 1.7
+            },
+            "exposure": {
+                "target": 0.2,
+                "delay": 5,
+                "tolerance": 0.1
+            },
+            "format" : {
+                "file" : "jpg"
+            }
+        }
+    }
+}
