@@ -5,6 +5,8 @@ updates:
   schedule:
     interval: daily
     time: "13:00"
+  ignore:
+      - dependency-name: "suntime" # Known to be broken after this version
   groups:
     python-packages:
       patterns:
