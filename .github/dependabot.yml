@@ -3,11 +3,10 @@ updates:
 - package-ecosystem: pip
   directory: "/"
   schedule:
-    interval: daily
-    time: "13:00"
+    interval: "monthly"
   ignore:
-      - dependency-name: "suntime" # Known to be broken after this version
+  - dependency-name: "suntime" # Known to be broken after this version
   groups:
     python-packages:
       patterns:
-        - "*"
+      - "*"
