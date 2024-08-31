@@ -40,15 +40,15 @@ def __capture_image(observation: Observation, capture: Capture) -> Capture:
     call = f"{command} -o {filename} {exposure_settings} {white_balance} {switches}"
 
     try:
-        imageTimeOut = 70  # TODO this needs to be from the configuration
-        log.debug("image capture timeout: %s", imageTimeOut)
+        image_timeout = 70  # TODO this needs to be from the configuration
+        log.debug("image capture timeout: %s", image_timeout)
         subprocess.run(
             call,
             shell=True,
             check=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.STDOUT,
-            timeout=imageTimeOut,
+            timeout=image_timeout,
         )  # TODO this needs to be from the configuration
         log.info("image capture completed")
         calculate_next_exposure_value(filename, capture)

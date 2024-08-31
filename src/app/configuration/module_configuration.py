@@ -8,15 +8,15 @@ from .core_configuration import LoggingConfig, DataConfig
 class ModuleLoggingConfig(LoggingConfig):
     file: Optional[str] = None
 
-    def merge(self, loggingConfig: LoggingConfig):
+    def merge(self, logging_config: LoggingConfig):
         if not self.path:
-            self.path = loggingConfig.path
+            self.path = logging_config.path
         if not self.level:
-            self.level = loggingConfig.level
+            self.level = logging_config.level
         if not self.format:
-            self.format = loggingConfig.format
+            self.format = logging_config.format
         if not self.rotation:
-            self.rotation = loggingConfig.rotation
+            self.rotation = logging_config.rotation
 
 
 @dataclass
