@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import MagicMock
 from datetime import datetime
-from src.app.configuration.core_configuration import LocationConfig, DeviceConfig
+from src.app.configuration.core_configuration import LocationConfig
 from src.app.observation.data import Observation
 from src.app.observation.utils import __get_sun_data, get_observation
 

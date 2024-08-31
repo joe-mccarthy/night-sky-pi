@@ -15,7 +15,8 @@ from typing import Tuple
 
 from suntime import Sun
 
-from ..configuration.configuration import ObservatoryConfig, LocationConfig
+from ..configuration.configuration import ObservatoryConfig
+from ..configuration.core_configuration import LocationConfig
 from .data import Observation, ObservationData, Period
 
 

@@ -1,9 +1,8 @@
 from dataclasses import dataclass
 from dataclass_wizard import JSONWizard
 import json
-from .core_configuration import *
-from .module_configuration import *
-from .nsp_configuration import *
+from .core_configuration import DeviceConfig, LoggingConfig, DataConfig
+from .nsp_configuration import NSP
 from os.path import isfile
 
 
