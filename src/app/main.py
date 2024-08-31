@@ -12,7 +12,6 @@ from time import sleep
 
 def run(arguments):
 
-    log.debug("entering nsp application")
     while True:
         configuration = build_configuration(arguments.configuration)
         current_datetime = datetime.now()
