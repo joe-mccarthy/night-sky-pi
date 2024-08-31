@@ -19,7 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#8](https://github.com/joe-mccarthy/night-sky-pi/issues/8) Configuration for the application is reloaded at the start of every observation rather and application startup
 - [#11](https://github.com/joe-mccarthy/night-sky-pi/pull/11) Update dependencies via dependabot, freeze suntime version as known breakage about **1.2.5**
 
-### Removed
+### Fixed
+
+- [[#12](https://github.com/joe-mccarthy/night-sky-pi/issues/12)] Logging configuration being ignored, introduced by [#8](https://github.com/joe-mccarthy/night-sky-pi/issues/8)
 
 ## [0.1.0]
 
