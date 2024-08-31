@@ -40,7 +40,7 @@ def __capture_image(observation: Observation, capture: Capture) -> Capture:
     call = f"{command} -o {filename} {exposure_settings} {white_balance} {switches}"
 
     try:
-        image_timeout = 70 
+        image_timeout = 70
         log.debug("image capture timeout: %s", image_timeout)
         subprocess.run(
             call,
@@ -48,7 +48,7 @@ def __capture_image(observation: Observation, capture: Capture) -> Capture:
             check=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.STDOUT,
-            timeout=image_timeout
+            timeout=image_timeout,
         )
         log.info("image capture completed")
         calculate_next_exposure_value(filename, capture)
@@ -58,9 +58,7 @@ def __capture_image(observation: Observation, capture: Capture) -> Capture:
     return capture
 
 
-def calculate_next_exposure_value(
-    image_path, capture: Capture
-):
+def calculate_next_exposure_value(image_path, capture: Capture):
 
     average_brightness = calculate_average_brightness(image_path)
 
