@@ -22,6 +22,7 @@
         "path": "./nsp/data"
     },
     "nsp" : {
+        "observation_cooldown" : 5,
         "data": {
             "path": "observations",
             "house_keeping" : {

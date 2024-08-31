@@ -7,6 +7,7 @@ from os.path import isfile
 
 
 from logging.handlers import RotatingFileHandler
+
 import logging
 import os
 
@@ -17,7 +18,6 @@ class ObservatoryConfig(JSONWizard):
     nsp: NSP
     logging: LoggingConfig
     data: DataConfig
-
 
 def __configure_logging(configuration: ObservatoryConfig) -> None:
     configuration.nsp.logging.merge(configuration.logging)
