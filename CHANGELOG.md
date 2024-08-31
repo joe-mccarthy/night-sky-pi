@@ -9,8 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [#9](https://github.com/joe-mccarthy/night-sky-pi/issues/9) A configurable cooldown has been added to the end of an observation to allow other processes to possibly complete
+  
 ### Changed
+
+- [#10](https://github.com/joe-mccarthy/night-sky-pi/issues/10) Modified timeout for the image capture subprocess to be configurable with a default
+- [#5](https://github.com/joe-mccarthy/night-sky-pi/issues/5) Resolved Sonar issues from the previous release
+- [#6](https://github.com/joe-mccarthy/night-sky-pi/issues/6) Added utility to convert microseconds to seconds for easier to read logs and messages
+- [#8](https://github.com/joe-mccarthy/night-sky-pi/issues/8) Configuration for the application is reloaded at the start of every observation rather and application startup
 
 ### Removed
 
-[unreleased]: https://codeberg.org/night-works/night-sky-pi/compare/main...main
+## [0.1.0]
+
+Initial Testing Release
+
+[unreleased]: https://github.com/joe-mccarthy/night-sky-pi/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/joe-mccarthy/night-sky-pi/releases/tag/0.1.0
