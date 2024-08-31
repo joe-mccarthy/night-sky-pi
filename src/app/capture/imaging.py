@@ -60,7 +60,7 @@ def __capture_image(observation: Observation, capture: Capture) -> Capture:
 
 def calculate_next_exposure_value(
     image_path, capture: Capture
-):  # TODO this needs breaking up and testing
+):
 
     average_brightness = calculate_average_brightness(image_path)
 
