@@ -1,5 +1,6 @@
 from ..configuration.configuration import ObservatoryConfig
 from ..observation.data import Observation
+from ..utilities.conversions import microsecond_to_seconds
 from datetime import datetime
 import logging as log
 from time import sleep, time
@@ -121,7 +122,7 @@ def calculate_next_exposure_value(image_path, capture: Capture):
     # Update the capture configuration
     capture.shutter.current = new_shutter_speed
     capture.gain.current = new_gain
-    log.debug("New shutter speed: %s", capture.shutter.current)
+    log.debug("New shutter speed: %s", microsecond_to_seconds(capture.shutter.current))
     log.debug("New gain: %s", capture.gain.current)
     log.debug("Next exposure value calculated")
 
