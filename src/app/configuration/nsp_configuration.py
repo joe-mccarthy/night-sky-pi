@@ -45,6 +45,7 @@ class Capture(JSONWizard):
     exposure: Exposure = field(default_factory=Exposure)
     format: CaptureFormat = field(default_factory=CaptureFormat)
     gain: Gain = field(default_factory=Gain)
+    timeout: Optional[int] = 100
 
 
 @dataclass

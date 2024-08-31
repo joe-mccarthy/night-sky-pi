@@ -54,7 +54,8 @@
             },
             "format" : {
                 "file" : "jpg"
-            }
+            },
+            "timeout_seconds" : 90
         }
     }
 }
