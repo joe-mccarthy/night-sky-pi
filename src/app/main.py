@@ -12,9 +12,9 @@ from time import sleep
 
 def run(arguments):
 
-    configuration = build_configuration(arguments.configuration)
     log.debug("entering nsp application")
     while True:
+        configuration = build_configuration(arguments.configuration)
         current_datetime = datetime.now()
         log.debug("starting the root loop")
         log.debug("current datetime is %s", current_datetime)
@@ -22,19 +22,20 @@ def run(arguments):
 
         if observation.period.within_observation_period(current_datetime):
             log.info(
-                "currently within an observation period till %s", observation.period.end
+                "observation %s till %s",
+                observation.period.date,
+                observation.period.end,
             )
             observation = setup_observation_filesystem(observation)
             perform_observation(observation, configuration)
         else:
-            log.info(
-                "not currently within observation period it will start @ %s",
-                observation.period.start,
-            )
+            log.info("not within observation period")
             perform_housekeeping(configuration)
             perform_packaging(configuration)
             seconds_till_observation = (
-                observation.period.calculate_wait_till_observation(datetime.now(timezone.utc))
+                observation.period.calculate_wait_till_observation(
+                    datetime.now(timezone.utc)
+                )
             )
             log.debug("%s seconds till observation start", seconds_till_observation)
             log.info("waiting for observation period at %s", observation.period.start)

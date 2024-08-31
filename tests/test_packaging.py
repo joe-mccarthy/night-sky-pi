@@ -3,15 +3,13 @@ from src.app.packaging import (
     perform_packaging,
     is_packaging_required,
     __zip_folder,
-    __delete_folder
+    __delete_folder,
 )
 
 
 @patch("src.app.packaging.is_packaging_required")
-def test_perform_packaging_no_packaging_required(
-     mock_is_packaging_required
-):
-    config = MagicMock()@patch("src.app.packaging.log")
+def test_perform_packaging_no_packaging_required(mock_is_packaging_required):
+    config = MagicMock() @ patch("src.app.packaging.log")
 
     mock_is_packaging_required.return_value = False
 
@@ -47,6 +45,7 @@ def test_perform_packaging_with_packaging_required(
     )
     mock_delete_folder.assert_called_once_with("folder1")
 
+
 @patch("src.app.packaging.os.path.exists")
 def test_is_packaging_required_with_non_existing_data_location(mock_exists):
     data_location = "/data/path"
@@ -57,7 +56,6 @@ def test_is_packaging_required_with_non_existing_data_location(mock_exists):
     assert result is False
 
 
-
 @patch("src.app.packaging.shutil")
 def test___zip_folder(mock_exists):
     source = "folder1"
@@ -66,7 +64,9 @@ def test___zip_folder(mock_exists):
 
     __zip_folder(source, root, base)
 
-    mock_exists.make_archive.assert_called_once_with("folder1", "zip", "/data/path/nsp/data/path", "folder1")
+    mock_exists.make_archive.assert_called_once_with(
+        "folder1", "zip", "/data/path/nsp/data/path", "folder1"
+    )
 
 
 @patch("src.app.packaging.shutil.rmtree")
