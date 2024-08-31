@@ -19,6 +19,7 @@ class ObservatoryConfig(JSONWizard):
     logging: LoggingConfig
     data: DataConfig
 
+
 def __configure_logging(configuration: ObservatoryConfig) -> None:
     configuration.nsp.logging.merge(configuration.logging)
     log_conf = configuration.nsp.logging

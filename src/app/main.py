@@ -28,10 +28,13 @@ def run(arguments):
             )
             observation = setup_observation_filesystem(observation)
             perform_observation(observation, configuration)
+            log.info(
+                "waiting configured time before performing additional tasks for %s minutes",
+                configuration.nsp.observation_cooldown,
+            )
+            sleep(configuration.nsp.observation_cooldown * 60)
         else:
             log.info("not within observation period")
-            log.info("waiting configured time before performing additional tasks for %s minutes", configuration.nsp.observation_cooldown)
-            sleep(configuration.nsp.observation_cooldown * 60)
             perform_housekeeping(configuration)
             perform_packaging(configuration)
             seconds_till_observation = (

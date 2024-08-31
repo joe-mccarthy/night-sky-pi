@@ -53,5 +53,4 @@ class NSP(JSONWizard):
     logging: ModuleLoggingConfig
     data: ModuleDataConfig
     capture: Capture = field(default_factory=Capture)
-    observation_cooldown: Optional[int] = 10 
-
+    observation_cooldown: Optional[int] = 10
