@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [[#12](https://github.com/joe-mccarthy/night-sky-pi/issues/12)] Logging configuration being ignored, introduced by [#8](https://github.com/joe-mccarthy/night-sky-pi/issues/8)
+- [#12](https://github.com/joe-mccarthy/night-sky-pi/issues/12) Logging configuration being ignored, introduced by [#8](https://github.com/joe-mccarthy/night-sky-pi/issues/8)
 
 ## [0.1.0]
 
