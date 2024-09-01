@@ -5,7 +5,7 @@ from .observation.utils import get_observation
 from .observation.filesystem import setup_observation_filesystem
 from .housekeeping import perform_housekeeping
 from .packaging import perform_packaging
-from .capture.imaging import perform_observation
+from .capture.imaging import perform_observation, __create_json_file
 
 from time import sleep
 
@@ -14,6 +14,7 @@ def run(arguments):
 
     while True:
         configuration = build_configuration(arguments.configuration)
+        
         current_datetime = datetime.now()
         log.debug("starting the root loop")
         log.debug("current datetime is %s", current_datetime)
