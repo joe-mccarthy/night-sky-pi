@@ -7,6 +7,7 @@ from time import sleep, time
 import subprocess
 from ..configuration.nsp_configuration import Capture
 from PIL import Image
+import json
 
 
 def perform_observation(
@@ -27,7 +28,9 @@ def perform_observation(
 def __capture_image(observation: Observation, capture: Capture) -> Capture:
     log.debug("starting image capture")
     log.debug("capturing image for observation %s", observation.period.date)
-    filename = f"{observation.data_config.observation_image_path}{round(time())}.jpg"
+    image_name = f"{round(time())}"
+    image_format = ".jpg"
+    filename = f"{observation.data_config.observation_image_path}{image_name}{image_format}"
     # Construct the command
     exposure_settings = (
         f"--shutter {capture.shutter.current} --gain {capture.gain.current} "
@@ -51,13 +54,32 @@ def __capture_image(observation: Observation, capture: Capture) -> Capture:
             timeout=capture.timeout,
         )
         log.info("image capture completed")
+        __create_json_file(observation, capture, image_name, image_format)
         calculate_next_exposure_value(filename, capture)
     except Exception as e:
         log.error(e)
 
     return capture
 
-
+def __create_json_file(observation: Observation, capture: Capture, file_name: str,image_format: str) -> None:
+    json_data = {
+        "capture": capture.__dict__,
+        "image" : {
+            "path": f"{observation.data_config.observation_image_path}{file_name}{image_format}",
+            "format": image_format,
+            "filename": file_name
+        }
+    }
+    
+    output_file = f"{observation.data_config.observation_data_path}{file_name}.json"
+    log.debug("Creating JSON file: %s", output_file)
+    try:
+        with open(output_file, 'w') as json_file:
+            json.dump(json_data, json_file)
+        log.debug("JSON file created successfully: %s", output_file)
+    except Exception as e:
+        log.error("Failed to create JSON file: %s", e)
+    
 def calculate_next_exposure_value(image_path, capture: Capture):
 
     average_brightness = calculate_average_brightness(image_path)
