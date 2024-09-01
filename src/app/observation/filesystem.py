@@ -33,5 +33,7 @@ def setup_observation_filesystem(observation: Observation) -> Observation:
             observation.data_config.path,
         )
         os.makedirs(observation.data_config.path)
+        os.makedirs(observation.data_config.image_path)
+        os.makedirs(observation.data_config.data_path)
 
     return observation

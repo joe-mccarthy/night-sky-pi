@@ -27,7 +27,7 @@ def perform_observation(
 def __capture_image(observation: Observation, capture: Capture) -> Capture:
     log.debug("starting image capture")
     log.debug("capturing image for observation %s", observation.period.date)
-    filename = f"{observation.data_config.path}{round(time())}.jpg"
+    filename = f"{observation.data_config.observation_image_path}{round(time())}.jpg"
     # Construct the command
     exposure_settings = (
         f"--shutter {capture.shutter.current} --gain {capture.gain.current} "

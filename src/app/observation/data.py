@@ -89,6 +89,8 @@ class ObservationData:
     data_path: str
     root_path: str
     path: str
+    observation_image_path: str
+    observation_data_path: str
     house_keeping: HouseKeeping
 
     def __init__(
@@ -98,6 +100,8 @@ class ObservationData:
         self.root_path = f"{self.data_path}{module.path}/"
         self.house_keeping = module.house_keeping
         self.path = f"{self.root_path}{period.date}/"
+        self.observation_image_path = f"{self.path}images/"
+        self.observation_data_path = f"{self.path}data/"
 
 
 @dataclass_json
