@@ -19,4 +19,4 @@ def publish_message(config:MQTTConfig, topic:str, message:str) -> None:
         client.connect(config.host, 1883, 60)
         client.publish(topic, message)
         client.disconnect()
-        log.info("published message to %s", topic)
+        log.debug("published message to %s", topic)
