@@ -5,7 +5,7 @@ from .observation.utils import get_observation
 from .observation.filesystem import setup_observation_filesystem
 from .housekeeping import perform_housekeeping
 from .packaging import perform_packaging
-from .capture.imaging import perform_observation, __create_json_file
+from .capture.imaging import perform_observation
 
 from time import sleep
 

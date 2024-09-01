@@ -1,6 +1,5 @@
 from unittest.mock import MagicMock
-from datetime import datetime
-from src.app.capture.imaging import __create_json_file
+from src.app.capture.reporting import create_json_file
 import json
 
 def test_create_json_file():
@@ -24,7 +23,7 @@ def test_create_json_file():
     image_format = ".jpg"
 
     # Call the function
-    __create_json_file(observation, capture, file_name, image_format)
+    create_json_file(observation, capture, file_name, image_format)
 
     # Assert that the JSON file was created with the correct data
     expected_json_data = {
