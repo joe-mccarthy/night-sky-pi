@@ -26,7 +26,7 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 ```json
 "device" : {
     "mqtt" : {
-        "enabled": false,
+        "enabled": true,
         "host": "127.0.0.1"
     }
 }
