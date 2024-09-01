@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 from ..configuration.core_configuration import MQTTConfig
+import logging as log
 
 def publish_message(config:MQTTConfig, topic:str, message:str) -> None:
     """
@@ -13,7 +14,9 @@ def publish_message(config:MQTTConfig, topic:str, message:str) -> None:
     Returns:
         None
     """
-    client = mqtt.Client()
-    client.connect(config.host, 1883, 60)
-    client.publish(topic, message)
-    client.disconnect()
+    if config.enabled:
+        client = mqtt.Client()
+        client.connect(config.host, 1883, 60)
+        client.publish(topic, message)
+        client.disconnect()
+        log.info("published message to %s", topic)

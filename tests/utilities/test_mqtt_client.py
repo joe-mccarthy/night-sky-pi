@@ -7,7 +7,7 @@ from src.app.configuration.core_configuration import MQTTConfig
 def test_publish_message(MockClient):
 
         mock_client_instance = MockClient.return_value
-        config = MQTTConfig(host='test_host')
+        config = MQTTConfig(host='test_host', enabled=True)
         topic = 'test/topic'
         message = 'test_message'
 
