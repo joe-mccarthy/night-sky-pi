@@ -3,6 +3,7 @@ from PIL import Image
 from ..configuration.nsp_configuration import Capture
 from ..utilities.conversions import microsecond_to_seconds
 
+
 def calculate_next_exposure_value(image_path, capture: Capture):
 
     average_brightness = calculate_average_brightness(image_path)

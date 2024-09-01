@@ -14,7 +14,7 @@ def run(arguments):
 
     while True:
         configuration = build_configuration(arguments.configuration)
-        
+
         current_datetime = datetime.now()
         log.debug("starting the root loop")
         log.debug("current datetime is %s", current_datetime)

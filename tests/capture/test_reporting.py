@@ -2,6 +2,7 @@ from unittest.mock import MagicMock
 from src.app.capture.reporting import create_json_file
 import json
 
+
 def test_create_json_file():
     # Create a mock observation and capture configuration
     observation = MagicMock()
@@ -30,27 +31,24 @@ def test_create_json_file():
         "observation": {
             "date": "2022-01-01",
             "start": "2022-01-01T00:00:00",
-            "end": "2022-01-01T01:00:00"
+            "end": "2022-01-01T01:00:00",
         },
-        "data" : {
+        "data": {
             "path": "./tests/scratch/",
             "root_path": "./tests/scratch/",
-            "observation_image_path":"./tests/scratch/",
-            "observation_data_path": "./tests/scratch/"
+            "observation_image_path": "./tests/scratch/",
+            "observation_data_path": "./tests/scratch/",
         },
-        "exposure" : {
+        "exposure": {
             "shutter": 0.0001,
             "gain": 1,
-            "white_balance": {
-                "red": 0.5,
-                "blue": 0.5
-            }
+            "white_balance": {"red": 0.5, "blue": 0.5},
         },
-        "image" : {
+        "image": {
             "path": "./tests/scratch/image123.jpg",
             "format": ".jpg",
-            "filename": "image123"
-        }
+            "filename": "image123",
+        },
     }
 
     with open("./tests/scratch/image123.json") as json_file:
