@@ -20,9 +20,6 @@ def run(arguments):
         log.debug("current datetime is %s", current_datetime)
         observation = get_observation(configuration, current_datetime)
 
-        observation = setup_observation_filesystem(observation) #TODO REMOVE AFTER TESTING
-        __create_json_file(observation, configuration.nsp.capture, "test", ".jpg") #TODO REMOVE AFTER TESTING
-        exit(0) #TODO REMOVE AFTER TESTING
         if observation.period.within_observation_period(current_datetime):
             log.info(
                 "observation %s till %s",
