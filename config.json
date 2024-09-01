@@ -4,6 +4,10 @@
         "location" : {
             "latitude" : 51.77655,
             "longitude" : 0.11158
+        },
+        "mqtt" : {
+            "enabled": false,
+            "host": "mqtt://localhost"
         }
     },
     "logging": {        

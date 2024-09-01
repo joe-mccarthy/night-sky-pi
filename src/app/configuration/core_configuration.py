@@ -17,11 +17,16 @@ class LocationConfig(JSONWizard):
     def data(self):
         return self.latitude, self.longitude
 
+@dataclass
+class MQTTConfig(JSONWizard):
+    enabled: Optional[bool] = False
+    host: Optional[str] = "mqtt://localhost"
 
 @dataclass
 class DeviceConfig(JSONWizard):
     name: str
     location: LocationConfig
+    mqtt: MQTTConfig
 
 
 @dataclass
