@@ -2,7 +2,8 @@ import paho.mqtt.client as mqtt
 from ..configuration.core_configuration import MQTTConfig
 import logging as log
 
-def publish_message(config:MQTTConfig, topic:str, message:str) -> None:
+
+def publish_message(config: MQTTConfig, topic: str, message: str) -> None:
     """
     Publishes a message to an MQTT broker.
 
