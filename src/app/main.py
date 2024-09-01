@@ -9,7 +9,6 @@ from .capture.imaging import perform_observation
 
 from time import sleep
 
-
 def run(arguments):
 
     while True:

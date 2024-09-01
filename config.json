@@ -7,7 +7,7 @@
         },
         "mqtt" : {
             "enabled": false,
-            "host": "mqtt://localhost"
+            "host": "127.0.0.1"
         }
     },
     "logging": {        
