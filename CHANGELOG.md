@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [#9](https://github.com/joe-mccarthy/night-sky-pi/issues/9) A configurable cooldown has been added to the end of an observation to allow other processes to possibly complete
+- [#3](https://github.com/joe-mccarthy/night-sky-pi/issues/3) Ability to publish messages to an MQTT Broker with supporting documentation.
   
 ### Changed
 
