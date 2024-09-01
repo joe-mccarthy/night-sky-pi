@@ -1,7 +1,7 @@
 .vscode
 data/
 .nsp/
-test/scratch/
+tests/scratch/
 # ---> Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
