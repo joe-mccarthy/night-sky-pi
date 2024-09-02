@@ -4,6 +4,7 @@ from ..utilities.conversions import microsecond_to_seconds
 from ..observation.data import Observation
 from ..configuration.nsp_configuration import Capture
 
+
 def create_json_file(
     observation: Observation, capture: Capture, file_name: str, image_format: str
 ) -> str:

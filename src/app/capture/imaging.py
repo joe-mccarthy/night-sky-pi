@@ -10,6 +10,7 @@ import subprocess
 from ..configuration.nsp_configuration import Capture
 from ..utilities.mqtt_client import publish_message
 
+
 def perform_observation(
     observation: Observation, configuration: ObservatoryConfig
 ) -> None:
@@ -19,14 +20,18 @@ def perform_observation(
     mqtt_config = configuration.device.mqtt
     while observation.period.within_observation_period(datetime.now()):
         log.debug("within observation starting processes to capture single image")
-        capture_configuration = __capture_image(observation, capture_configuration, mqtt_config)
+        capture_configuration = __capture_image(
+            observation, capture_configuration, mqtt_config
+        )
         delay = configuration.nsp.capture.exposure.delay
         log.debug("sleeping for %s seconds", delay)
         sleep(delay)
     log.info("completed observation capture period")
 
 
-def __capture_image(observation: Observation, capture: Capture, mqtt_config: MQTTConfig) -> Capture:
+def __capture_image(
+    observation: Observation, capture: Capture, mqtt_config: MQTTConfig
+) -> Capture:
     log.debug("starting image capture")
     log.debug("capturing image for observation %s", observation.period.date)
     image_name = f"{round(time())}"
