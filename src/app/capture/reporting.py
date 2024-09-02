@@ -4,10 +4,9 @@ from ..utilities.conversions import microsecond_to_seconds
 from ..observation.data import Observation
 from ..configuration.nsp_configuration import Capture
 
-
 def create_json_file(
     observation: Observation, capture: Capture, file_name: str, image_format: str
-) -> None:
+) -> str:
     json_data = {
         "observation": {
             "date": observation.period.date,
@@ -41,5 +40,6 @@ def create_json_file(
         with open(output_file, "w") as json_file:
             json.dump(json_data, json_file)
         log.debug("JSON file created successfully: %s", output_file)
+        return json_data
     except Exception as e:
         log.error("Failed to create JSON file: %s", e)
