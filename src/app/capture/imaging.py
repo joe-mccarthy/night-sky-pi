@@ -18,6 +18,11 @@ def perform_observation(
     log.debug("creating initial exposure values from configuration")
     capture_configuration: Capture = configuration.nsp.capture
     mqtt_config = configuration.device.mqtt
+    publish_message(
+        config=mqtt_config,
+        topic="nsp/observation-started",
+        payload=__get_observation_message(observation),
+    )
     while observation.period.within_observation_period(datetime.now()):
         log.debug("within observation starting processes to capture single image")
         capture_configuration = __capture_image(
@@ -27,6 +32,28 @@ def perform_observation(
         log.debug("sleeping for %s seconds", delay)
         sleep(delay)
     log.info("completed observation capture period")
+    publish_message(
+        config=mqtt_config,
+        topic="nsp/observation-ended",
+        payload=__get_observation_message(observation),
+    )
+
+
+def __get_observation_message(observation: Observation) -> str:
+    json_data = {
+        "observation": {
+            "date": observation.period.date,
+            "start": observation.period.start.isoformat(),
+            "end": observation.period.end.isoformat(),
+        },
+        "data": {
+            "path": observation.data_config.path,
+            "root_path": observation.data_config.root_path,
+            "observation_image_path": observation.data_config.observation_image_path,
+            "observation_data_path": observation.data_config.observation_data_path,
+        },
+    }
+    return json_data
 
 
 def __capture_image(
