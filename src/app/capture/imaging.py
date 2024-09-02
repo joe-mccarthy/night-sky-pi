@@ -21,7 +21,7 @@ def perform_observation(
     publish_message(
         config=mqtt_config,
         topic="nsp/observation-started",
-        payload=__get_observation_message(observation),
+        message=__get_observation_message(observation),
     )
     while observation.period.within_observation_period(datetime.now()):
         log.debug("within observation starting processes to capture single image")
@@ -35,7 +35,7 @@ def perform_observation(
     publish_message(
         config=mqtt_config,
         topic="nsp/observation-ended",
-        payload=__get_observation_message(observation),
+        message=__get_observation_message(observation),
     )
 
 
@@ -90,7 +90,7 @@ def __capture_image(
         )
         log.info("image capture completed")
         json = create_json_file(observation, capture, image_name, image_format)
-        publish_message(config=mqtt_config, topic="nsp/image-captured", payload=json)
+        publish_message(config=mqtt_config, topic="nsp/image-captured", message=json)
         calculate_next_exposure_value(filename, capture)
     except Exception as e:
         log.error(e)
