@@ -18,6 +18,6 @@ def publish_message(config: MQTTConfig, topic: str, message: str) -> None:
     if config.enabled:
         client = mqtt.Client()
         client.connect(config.host, 1883, 60)
-        client.publish(topic, message)
+        client.publish(topic, str(message))
         client.disconnect()
         log.debug("published message to %s", topic)
