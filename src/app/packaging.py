@@ -3,6 +3,7 @@ from typing import List
 from .configuration.configuration import ObservatoryConfig
 import os, shutil
 import pathlib
+from .utilities.mqtt_client import publish_message
 
 
 def perform_packaging(config: ObservatoryConfig) -> None:
@@ -18,6 +19,13 @@ def perform_packaging(config: ObservatoryConfig) -> None:
         log.info("packaging item %s", item)
         folder_name = pathlib.PurePath(item).name
         __zip_folder(item, data_location, folder_name)
+        publish_message(
+            config=config.device.mqtt,
+            topic="nsp/archive-completed",
+            message=str(
+                {"folder": folder_name, "path": f"{data_location}/{folder_name}.zip"}
+            ),
+        )
         __delete_folder(item)
         log.info("packaging of %s completed", item)
 

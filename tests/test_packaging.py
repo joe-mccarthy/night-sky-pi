@@ -1,4 +1,5 @@
 from unittest.mock import MagicMock, patch
+from src.app.utilities.mqtt_client import publish_message
 from src.app.packaging import (
     perform_packaging,
     is_packaging_required,
@@ -20,6 +21,7 @@ def test_perform_packaging_no_packaging_required(mock_is_packaging_required):
     )
 
 
+@patch("src.app.packaging.publish_message")
 @patch("src.app.packaging.is_packaging_required")
 @patch("src.app.packaging.data_directory_contents")
 @patch("src.app.packaging.__zip_folder")
@@ -29,6 +31,7 @@ def test_perform_packaging_with_packaging_required(
     mock_zip_folder,
     mock_data_directory_contents,
     mock_is_packaging_required,
+    mock_publish_message,
 ):
     config = MagicMock()
     mock_is_packaging_required.return_value = True
