@@ -7,7 +7,7 @@ from ..configuration.nsp_configuration import Capture
 
 def create_json_file(
     observation: Observation, capture: Capture, file_name: str, image_format: str
-) -> str:
+) -> dict:
     json_data = {
         "observation": {
             "date": observation.period.date,

@@ -39,7 +39,7 @@ def perform_observation(
     )
 
 
-def __get_observation_message(observation: Observation) -> str:
+def __get_observation_message(observation: Observation) -> dict:
     json_data = {
         "observation": {
             "date": observation.period.date,

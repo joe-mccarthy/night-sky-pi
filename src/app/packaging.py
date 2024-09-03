@@ -22,10 +22,9 @@ def perform_packaging(config: ObservatoryConfig) -> None:
         publish_message(
             config=config.device.mqtt,
             topic="nsp/archive-completed",
-            message={
-                "folder": folder_name,
-                "path": f"{data_location}/{folder_name}.zip",
-            },
+            message=str(
+                {"folder": folder_name, "path": f"{data_location}/{folder_name}.zip"}
+            ),
         )
         __delete_folder(item)
         log.info("packaging of %s completed", item)

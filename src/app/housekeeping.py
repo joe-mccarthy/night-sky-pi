@@ -49,7 +49,7 @@ def perform_housekeeping(config: ObservatoryConfig) -> None:
         publish_message(
             config=config.device.mqtt,
             topic="nsp/file-deleted",
-            message={"file": item}
+            message=str({"file": item}),
         )
         log.info("deleted file %s", item)
 
