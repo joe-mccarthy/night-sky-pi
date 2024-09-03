@@ -18,6 +18,7 @@ import time
 import magic
 
 from .configuration.configuration import ObservatoryConfig
+from .utilities.mqtt_client import publish_message
 from typing import List
 
 
@@ -45,6 +46,11 @@ def perform_housekeeping(config: ObservatoryConfig) -> None:
     for item in get_files_for_deletion(data_location, age):
         log.debug("file %s will be deleted", item)
         os.remove(item)
+        publish_message(
+            config=config.device.mqtt,
+            topic="nsp/file-deleted",
+            message={"file": item}
+        )
         log.info("deleted file %s", item)
 
     log.info("house keeping completed")
