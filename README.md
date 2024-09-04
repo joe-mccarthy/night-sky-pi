@@ -7,7 +7,11 @@
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/joe-mccarthy/night-sky-pi/latest?cacheSeconds=1)
 ![GitHub License](https://img.shields.io/github/license/joe-mccarthy/night-sky-pi?cacheSeconds=1)
 
+## Hardware
+
 ## Prerequisites
+
+### Python
 
 ### MQTT Broker
 
@@ -32,9 +36,13 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 }
 ```
 
-## Events
+## Configuration
 
-### Observation Started
+## Outputs
+
+### MQTT
+
+#### Observation Started
 
 ```json
 {
@@ -52,7 +60,7 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 }
 ```
 
-### Image Captured
+#### Image Captured
 
 ```json
 {
