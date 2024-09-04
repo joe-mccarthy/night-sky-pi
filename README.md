@@ -39,14 +39,14 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 ```json
 {
     "observation": {
-        "date": "2024-09-04", 
-        "start": "2024-09-04T19:38:00+01:00", 
+        "date": "2024-09-04",
+        "start": "2024-09-04T19:38:00+01:00",
         "end": "2024-09-05T06:19:00+01:00"
     },
     "data": {
-        "path": "/home/joseph/nsp/data/observations/2024-09-04/", 
-        "root_path": "/home/joseph/nsp/data/observations/", 
-        "observation_image_path": "/home/joseph/nsp/data/observations/2024-09-04/images/", 
+        "path": "/home/joseph/nsp/data/observations/2024-09-04/",
+        "root_path": "/home/joseph/nsp/data/observations/",
+        "observation_image_path": "/home/joseph/nsp/data/observations/2024-09-04/images/",
         "observation_data_path": "/home/joseph/nsp/data/observations/2024-09-04/data/"
     }
 }
@@ -56,34 +56,29 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 
 ```json
 {
-    "observation": 
-    {
-        "date": "2024-09-04", 
-        "start": "2024-09-04T19:38:00+01:00", 
+    "observation": {
+        "date": "2024-09-04",
+        "start": "2024-09-04T19:38:00+01:00",
         "end": "2024-09-05T06:19:00+01:00"
-    }, 
-    "data": 
-    {
-        "path": "/home/joseph/nsp/data/observations/2024-09-04/", 
-        "root_path": "/home/joseph/nsp/data/observations/", 
-        "observation_image_path": "/home/joseph/nsp/data/observations/2024-09-04/images/", 
+    },
+    "data": {
+        "path": "/home/joseph/nsp/data/observations/2024-09-04/",
+        "root_path": "/home/joseph/nsp/data/observations/",
+        "observation_image_path": "/home/joseph/nsp/data/observations/2024-09-04/images/",
         "observation_data_path": "/home/joseph/nsp/data/observations/2024-09-04/data/"
-    }, 
-    "exposure": 
-    {
-        "shutter": 0.016213999999999996, 
-        "gain": 1.0, 
-        "white_balance": 
-        {
-            "red": 2.8, 
+    },
+    "exposure": {
+        "shutter": 0.25,
+        "gain": 1,
+        "white_balance": {
+            "red": 2.8,
             "blue": 1.7
         }
-    }, 
-    "image": 
-    {
-        "path": "/home/joseph/nsp/data/observations/2024-09-04/images/1725489532.jpg", 
-        "format": ".jpg", 
-        "filename": "1725489532"
+    },
+    "image": {
+        "path": "/home/joseph/nsp/data/observations/2024-09-04/images/1725490896.jpg",
+        "format": ".jpg",
+        "filename": "1725490896"
     }
 }
 ```
