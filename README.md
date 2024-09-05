@@ -90,3 +90,58 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
     }
 }
 ```
+
+### Observation Completed
+
+```json
+{
+    "observation": {
+        "date": "2024-09-04",
+        "start": "2024-09-04T19:38:00+01:00",
+        "end": "2024-09-05T06:19:00+01:00"
+    },
+    "data": {
+        "path": "/home/joseph/nsp/data/observations/2024-09-04/",
+        "root_path": "/home/joseph/nsp/data/observations/",
+        "observation_image_path": "/home/joseph/nsp/data/observations/2024-09-04/images/",
+        "observation_data_path": "/home/joseph/nsp/data/observations/2024-09-04/data/"
+    }
+}
+```
+
+### Archive Deleted
+
+```json
+{
+    "file": "/home/joseph/nsp/data/observations/2024-08-30.zip"
+}
+```
+
+### Archive Completed
+
+```json
+{
+    "name": "2024-09-04",
+    "format": "zip",
+    "folder" : "/home/joseph/nsp/data/observations/",
+    "path": "/home/joseph/nsp/data/observations/2024-09-04.zip"
+}
+```
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+1. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+1. Commit your Changes (git commit -m 'Add some AmazingFeature')
+1. Push to the Branch (git push origin feature/AmazingFeature)
+1. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
