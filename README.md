@@ -63,11 +63,11 @@ All configuration of the Night Sky Pi is done through the [config.json](config.j
 
 - __name__ : 
 - __location__ : 
-  -- __latitude__ :
-  -- __longitude__ :
+  - __latitude__ :
+  - __longitude__ :
 - __mqtt__ :
-  -- __enabled__ :
-  -- __host__ :
+  - __enabled__ :
+  - __host__ :
 
 #### Logging
 
