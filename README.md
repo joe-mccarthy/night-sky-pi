@@ -57,7 +57,11 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 
 ### MQTT
 
+If MQTT has been [enabled](#mqtt-broker) on Night Sky Pi, there are a couple of events that are fired through the running of the application.
+
 #### Observation Started
+
+When an observation starts and the file structure has been created Night Sky Pi will fire an event to the "nsp/observation-started" topic, below is an example of what to expect in the message payload.
 
 ```json
 {
@@ -76,6 +80,8 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 ```
 
 #### Image Captured
+
+Each and every time that an image has been captured and saved to disk. Night Sky Pi will publish a message to the "nsp/image-captured" topic, below is an example of what to expect in the message payload.
 
 ```json
 {
@@ -108,6 +114,8 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 
 ### Observation Completed
 
+When an observation has reached it's completed datetime Night Sky Pi will fire an event to the "nsp/observation-ended" topic, below is an example of what to expect in the message payload.
+
 ```json
 {
     "observation": {
@@ -126,6 +134,8 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 
 ### Archive Deleted
 
+During house keeping there is an configuration option to delete zipped archives that are older than a configured number of days. If enabled and an archive is deleted, Night Sky Pi will fire an event to the "nsp/file-deleted" topic, below is an example of what to expect in the message payload.
+
 ```json
 {
     "file": "/home/joseph/nsp/data/observations/2024-08-30.zip"
@@ -133,6 +143,8 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 ```
 
 ### Archive Completed
+
+After the observation and housekeeping the Night Sky Pi will archive the entire observation folder. This operation can take a while once completed, Night Sky Pi will fire an event to the "nsp/archive-completed" topic, below is an example of what to expect in the message payload.
 
 ```json
 {
