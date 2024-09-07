@@ -68,8 +68,8 @@ The json file structure is as follows:
 
 #### Device
 
-- __name__ : 
-- __location__ : 
+- __name__ :
+- __location__ :
   - __latitude__ :
   - __longitude__ :
 - __mqtt__ :
@@ -106,17 +106,17 @@ The json file structure is as follows:
 
 ##### NSP Logging
 
-- __file__ : 
-- __level__ : 
+- __file__ :
+- __level__ :
 
 ##### NSP Capture
 
 - __shutter__ :
-  - __initial__ : 
+  - __initial__ :
   - __slowest__ :
   - __fastest__ :
-- __gain__ : 
-  - __initial__ : 
+- __gain__ :
+  - __initial__ :
   - __lowest__ :
   - __highest__ :
 - __white_balance__ :
