@@ -7,11 +7,26 @@
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/joe-mccarthy/night-sky-pi/latest?cacheSeconds=1)
 ![GitHub License](https://img.shields.io/github/license/joe-mccarthy/night-sky-pi?cacheSeconds=1)
 
+Night Sky Pi is a camera that takes images throughout the night currently from sunset till sunrise. These images are then zipped then the application waits for the next observation period. Along with the images that are taken there are supporting json files for each image with additional information. These data files currently contain the exposure and observation information for the image, allowing for processing off device later.
+
+There could be additional json files created by other supporting applications. The Night Sky Pi can use MQTT to publish events so one could write other applications that respond to these events to complete additional task. One example would be to add weather information to the json file. Note: MQTT is not required for standard operation only for other applications to interact with the data in a timely manner.
+
 ## Hardware
+
+Night Sky Pi has been created with certain hardware in mind. Wanting to keep the application simple, small and low cost the hardware that Night Sky Pi has targeted is the __Raspberry Pi Zero 2 W__. That being said any __Raspberry Pi__ more capable than this model should work fine. The camera used and tested is the __Raspberry Pi HQ Camera__, however the standard camera model could be used ensuring that the exposure times within the configuration are kept within the models capabilities.
 
 ## Prerequisites
 
 ### Python
+
+Night Sky Pi is written in Python and has been tested with the following Python versions:
+
+- Python 3.8
+- Python 3.9
+- Python 3.10
+- Python 3.11
+
+The [nsp.sh](nsp.sh) runs within a virtual environment based on what's on your system path.
 
 ### MQTT Broker
 
