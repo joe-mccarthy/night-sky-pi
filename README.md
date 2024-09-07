@@ -59,6 +59,13 @@ All configuration of the Night Sky Pi is done through the [config.json](config.j
 
 ### Configuration Items
 
+The json file structure is as follows:
+
+- __device__ : [details](#device)
+- __logging__ : [details](#logging)
+- __data__ : [details](#data)
+- __nsp__ : [details](#nsp)
+
 #### Device
 
 - __name__ : 
@@ -71,25 +78,57 @@ All configuration of the Night Sky Pi is done through the [config.json](config.j
 
 #### Logging
 
-- __logging__ : 
-  - __path__ :
-  - __level__ :
-  - __format__ :
-    - __date__ :
-    - __output__ :
-  - __rotation__ :
-    - __size__ :
-    - __backup__ :
+- __path__ :
+- __level__ :
+- __format__ :
+  - __date__ :
+  - __output__ :
+- __rotation__ :
+  - __size__ :
+  - __backup__ :
 
 #### Data
 
+- __path__ :
+
 #### NSP
 
-##### Data
+- __observation_cooldown__ :
+- __data__ : [details](#nsp-data)
+- __logging__ : [details](#nsp-logging)
+- __capture__ : [details](#nsp-capture)
 
-##### Logging
+##### NSP Data
 
-##### Capture
+- __path__ :
+- __house_keeping__ :
+  - __delete_after__ :
+
+##### NSP Logging
+
+- __file__ : 
+- __level__ : 
+
+##### NSP Capture
+
+- __shutter__ :
+  - __initial__ : 
+  - __slowest__ :
+  - __fastest__ :
+- __gain__ : 
+  - __initial__ : 
+  - __lowest__ :
+  - __highest__ :
+- __white_balance__ :
+  - __red__ :
+  - __blue__ :
+- __exposure__ :
+  - __target__ :
+  - __delay__ :
+  - __tolerance__ :
+- __format__ :
+  - __file__ :
+- __timeout_seconds__:
 
 ## Running Night Sky Pi
 
