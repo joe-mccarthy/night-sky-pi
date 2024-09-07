@@ -55,6 +55,34 @@ The next step is to configure the Night Sky Pi to use the MQTT broker, as MQTT e
 
 ## Configuration
 
+All configuration of the Night Sky Pi is done through the [config.json](config.json), which is passed into the Night Sky Pi as an argument. It's best not to update the configuration within the repository but to copy it to another location and use that for running the Night Sky Pi.
+
+### Configuration Items
+
+#### Device
+
+- __name__ : 
+- __location__ : 
+  -- __latitude__ :
+  -- __longitude__ :
+- __mqtt__ :
+  -- __enabled__ :
+  -- __host__ :
+
+#### Logging
+
+#### Data
+
+#### NSP
+
+##### Data
+
+##### Logging
+
+##### Capture
+
+## Running Night Sky Pi
+
 ## Outputs
 
 ### MQTT
