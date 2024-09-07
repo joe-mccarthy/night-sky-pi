@@ -71,6 +71,16 @@ All configuration of the Night Sky Pi is done through the [config.json](config.j
 
 #### Logging
 
+- __logging__ : 
+  - __path__ :
+  - __level__ :
+  - __format__ :
+    - __date__ :
+    - __output__ :
+  - __rotation__ :
+    - __size__ :
+    - __backup__ :
+
 #### Data
 
 #### NSP
