@@ -17,6 +17,8 @@ Night Sky Pi has been created with certain hardware in mind. Wanting to keep the
 
 ## Prerequisites
 
+Before deploying the Night Sky Pi it's important to ensure that you have the following configured as there are dependencies. However the installation of an MQTT broker is optional I usually have it installed instead of needing to remember to do it when starting up other applications.
+
 ### Python
 
 Night Sky Pi is written in Python and has been tested with the following Python versions:
