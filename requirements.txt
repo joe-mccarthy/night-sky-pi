@@ -11,6 +11,7 @@ dill==0.3.8
 distlib==0.3.8
 exceptiongroup==1.2.2
 filelock==3.15.4
+freezegun==1.5.1
 iniconfig==2.0.0
 isort==5.13.2
 marshmallow==3.22.0

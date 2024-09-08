@@ -11,7 +11,7 @@ from time import sleep
 
 
 def run(arguments):
-
+   
     while True:
         configuration = build_configuration(arguments.configuration)
 
@@ -46,3 +46,6 @@ def run(arguments):
             log.info("waiting for observation period at %s", observation.period.start)
             sleep(seconds_till_observation)
         log.debug("ending the root loop")
+        
+        if arguments.test_mode: # in test no infinite loop
+            break
