@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#6](https://github.com/joe-mccarthy/night-sky-pi/issues/6) Added utility to convert microseconds to seconds for easier to read logs and messages
 - [#8](https://github.com/joe-mccarthy/night-sky-pi/issues/8) Configuration for the application is reloaded at the start of every observation rather and application startup
 - [#11](https://github.com/joe-mccarthy/night-sky-pi/pull/11) Update dependencies via dependabot, freeze suntime version as known breakage about **1.2.5**
+- [#7](https://github.com/joe-mccarthy/night-sky-pi/issues/7) Updated readme with information
 
 ### Fixed
 

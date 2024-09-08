@@ -149,9 +149,13 @@ After=network.target
 
 [Service]
 Type=Simple
-User=username # update this to be your current user
-WorkingDirectory=/home/username/repositories/night-sky-pi # the location of the night sky pi repository
-ExecStart=/home/username/repositories/night-sky-pi/nsp.sh /home/username/config.json #update these paths to be the location of the nsp.sh and where you previously copied the json configuration.
+# update this to be your current user
+User=username 
+# the location of the night sky pi repository
+WorkingDirectory=/home/username/repositories/night-sky-pi 
+# update these paths to be the location of the nsp.sh 
+# update argument to where you previously copied the json configuration.
+ExecStart=/home/username/repositories/night-sky-pi/nsp.sh /home/username/config.json 
 Restart=on-failure
 
 [Install]
