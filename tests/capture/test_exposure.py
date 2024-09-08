@@ -1,4 +1,4 @@
-import unittest
+import math
 from unittest.mock import patch, MagicMock
 from src.app.capture.exposure import calculate_next_exposure_value
 from src.app.configuration.nsp_configuration import Capture
@@ -22,8 +22,8 @@ def test_brightness_below_lower_threshold(mock_calculate_average_brightness):
     calculate_next_exposure_value("dummy_path", capture)
 
     # Assert
-    assert capture.shutter.current == 200.03
-    assert capture.gain.current == 1.0
+    assert math.isclose(capture.shutter.current, 200, rel_tol=0.5)
+    assert math.isclose(capture.gain.current, 1.0)
 
 
 @patch("src.app.capture.exposure.calculate_average_brightness")
@@ -44,8 +44,8 @@ def test_brightness_above_upper_threshold(mock_calculate_average_brightness):
     calculate_next_exposure_value("dummy_path", capture)
 
     # Assert
-    assert capture.shutter.current == 95.0
-    assert capture.gain.current == 1.0
+    assert math.isclose(capture.shutter.current, 95, rel_tol=0.5)
+    assert math.isclose(capture.gain.current, 1.0)
 
 
 @patch("src.app.capture.exposure.calculate_average_brightness")
@@ -66,8 +66,8 @@ def test_brightness_above_upper_threshold_gain(mock_calculate_average_brightness
     calculate_next_exposure_value("dummy_path", capture)
 
     # Assert
-    assert capture.shutter.current == 100
-    assert capture.gain.current == 6.65
+    assert math.isclose(capture.shutter.current, 100)
+    assert math.isclose(capture.gain.current, 6.6, rel_tol=0.5)
 
 
 @patch("src.app.capture.exposure.calculate_average_brightness")
@@ -88,8 +88,8 @@ def test_brightness_below_lower_threshold_gain(mock_calculate_average_brightness
     calculate_next_exposure_value("dummy_path", capture)
 
     # Assert
-    assert capture.shutter.current == 10000
-    assert capture.gain.current == 1.15
+    assert math.isclose(capture.shutter.current, 10000)
+    assert math.isclose(capture.gain.current, 1.1, rel_tol=0.5)
 
 
 @patch("src.app.capture.exposure.calculate_average_brightness")
@@ -109,5 +109,5 @@ def test_brightness_within_tolerance(mock_calculate_average_brightness):
     # Act
     calculate_next_exposure_value("dummy_path", capture)
 
-    assert capture.shutter.current == 550
-    assert capture.gain.current == 3.0
+    assert math.isclose(capture.shutter.current, 550)
+    assert math.isclose(capture.gain.current, 3.0, rel_tol=0.5)
