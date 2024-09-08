@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+
 ### Added
 
 - [#9](https://github.com/joe-mccarthy/night-sky-pi/issues/9) A configurable cooldown has been added to the end of an observation to allow other processes to possibly complete
@@ -32,5 +34,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial Testing Release
 
-[unreleased]: https://github.com/joe-mccarthy/night-sky-pi/compare/0.1.0...HEAD
+[unreleased]: https://github.com/joe-mccarthy/night-sky-pi/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/joe-mccarthy/night-sky-pi/compare/0.1.0...1.0.0
 [0.1.0]: https://github.com/joe-mccarthy/night-sky-pi/releases/tag/0.1.0
