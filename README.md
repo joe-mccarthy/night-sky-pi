@@ -132,6 +132,40 @@ The json file structure is as follows:
 
 ## Running Night Sky Pi
 
+It's recommended that Night Sky Pi is run as a service. This ensures that it doesn't stop of user logging off and on system restarts to do this carry out the following.
+
+```bash
+# current working directory is the night sky pi repository.
+sudo cp nsp.service /etc/systemd/system/nsp.service
+sudo nano /etc/systemd/system/nsp.service
+```
+
+Next step is to update the service definition to the correct paths and running as the correct user.
+
+```bash
+[Unit]
+Description=Night Sky Pi
+After=network.target
+
+[Service]
+Type=Simple
+User=username # update this to be your current user
+WorkingDirectory=/home/username/repositories/night-sky-pi # the location of the night sky pi repository
+ExecStart=/home/username/repositories/night-sky-pi/nsp.sh /home/username/config.json #update these paths to be the location of the nsp.sh and where you previously copied the json configuration.
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Next is to enable and start the service.
+
+```sh
+sudo systemctl daemon-reload
+sudo systemctl start nsp
+sudo systemctl enable nsp
+```
+
 ## Outputs
 
 ### MQTT
