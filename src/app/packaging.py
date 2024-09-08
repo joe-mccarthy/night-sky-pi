@@ -70,7 +70,7 @@ def is_packaging_required(data_location: str) -> bool:
 
 
 def __zip_folder(source, root, base, package_format) -> None:
-    log.debug("about to compress directory %s into %s.%s", base, package_format)
+    log.debug("about to compress directory %s into %s.%s", base,base, package_format)
     shutil.make_archive(source, package_format, root, base)
     log.info("completed compression of %s into %s.%s", base, base,package_format)
 
