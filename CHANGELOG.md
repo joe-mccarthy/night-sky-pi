@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#3](https://github.com/joe-mccarthy/night-sky-pi/issues/3) Ability to publish messages to an MQTT Broker with supporting documentation.
 - [#4](https://github.com/joe-mccarthy/night-sky-pi/issues/4) Observation, Capture, Data and file information stored in data directory for image.
 - [#16](https://github.com/joe-mccarthy/night-sky-pi/issues/16) Publish status events to MQTT broker
+- [#1](https://github.com/joe-mccarthy/night-sky-pi/issues/1) Added additional tests
   
 ### Changed
 
