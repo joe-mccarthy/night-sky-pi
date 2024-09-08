@@ -168,6 +168,10 @@ sudo systemctl enable nsp
 
 ## Outputs
 
+During an observation period there will be a folder created with the observation date as configured in the json file. Within this directory there will be two directories. First is the images directory where the captured images are stored with the filename being the timestamp of capture. The second directory is the data directory that contains any created json or artifacts from other modules.
+
+Once the observations has completed house keeping will delete any old files if configured. Then the last observation will be zipped with the same name as the observation data, and the source folder is deleted.
+
 ### MQTT
 
 If MQTT has been [enabled](#mqtt-broker) on Night Sky Pi, there are a couple of events that are fired through the running of the application.
