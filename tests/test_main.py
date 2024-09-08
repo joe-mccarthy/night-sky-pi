@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from freezegun import freeze_time
 from src.app.main import run
 
+
 @patch("src.app.main.build_configuration")
 @patch("src.app.main.get_observation")
 @patch("src.app.main.setup_observation_filesystem")
@@ -25,7 +26,7 @@ def test_run_within_observation_period(
     arguments = MagicMock()
     arguments.configuration = "config.json"
     arguments.test_mode = True
-    
+
     config = MagicMock()
     mock_build_configuration.return_value = config
 
@@ -43,6 +44,7 @@ def test_run_within_observation_period(
     mock_sleep.assert_called_once_with(config.nsp.observation_cooldown * 60)
     mock_perform_housekeeping.assert_not_called()
     mock_perform_packaging.assert_not_called()
+
 
 @patch("src.app.main.build_configuration")
 @patch("src.app.main.get_observation")
@@ -77,7 +79,7 @@ def test_run_not_within_observation_period(
     with freeze_time("2022-01-01 12:00:00"):
         run(arguments)
 
-    mock_build_configuration.assert_called_once_with('config.json')
+    mock_build_configuration.assert_called_once_with("config.json")
     mock_get_observation.assert_called_once_with(config, datetime(2022, 1, 1, 12, 0, 0))
     mock_setup_observation_filesystem.assert_not_called()
     mock_perform_observation.assert_not_called()
