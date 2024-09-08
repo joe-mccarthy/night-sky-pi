@@ -44,7 +44,7 @@ def test_perform_packaging_with_packaging_required(
     )
     mock_data_directory_contents.assert_called_once_with(config)
     mock_zip_folder.assert_called_once_with(
-        "folder1", f"{config.data.path}/{config.nsp.data.path}", "folder1"
+        "folder1", f"{config.data.path}/{config.nsp.data.path}", "folder1", "zip"
     )
     mock_delete_folder.assert_called_once_with("folder1")
     mock_publish_message.assert_called_once()

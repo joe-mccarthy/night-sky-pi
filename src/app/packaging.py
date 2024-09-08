@@ -19,7 +19,7 @@ def perform_packaging(config: ObservatoryConfig) -> None:
         log.info("packaging item %s", item)
         folder_name = pathlib.PurePath(item).name
         package_format = "zip"
-        __zip_folder(item, data_location, folder_name)
+        __zip_folder(item, data_location, folder_name, package_format)
         publish_message(
             config=config.device.mqtt,
             topic="nsp/archive-completed",
