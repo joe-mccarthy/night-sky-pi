@@ -68,67 +68,67 @@ The json file structure is as follows:
 
 #### Device
 
-- __name__ :
-- __location__ :
-  - __latitude__ :
-  - __longitude__ :
-- __mqtt__ :
-  - __enabled__ :
-  - __host__ :
+- __name__ : Friendly name for the camera
+- __location__ : The location of the camera, this is used to calculate sun position.
+  - __latitude__ : double for the latitude of the device
+  - __longitude__ : double for the longitude of the device
+- __mqtt__ : MQTT settings for the device
+  - __enabled__ : boolean if enabled, mqtt is disabled by default
+  - __host__ : location of mqtt broker, default and recommended is localhost
 
 #### Logging
 
-- __path__ :
-- __level__ :
-- __format__ :
-  - __date__ :
-  - __output__ :
-- __rotation__ :
-  - __size__ :
-  - __backup__ :
+- __path__ : location of the log file
+- __level__ : the level at which to log at
+- __format__ : log formatting options
+  - __date__ : how to represent dates
+  - __output__ : how to print log statements
+- __rotation__ : logging roll over settings
+  - __size__ : the size of the log file before rolling over
+  - __backup__ : the number of old log files to keep before deletion
 
 #### Data
 
-- __path__ :
+- __path__ : Root directory to save all created data
 
 #### NSP
 
-- __observation_cooldown__ :
+- __observation_cooldown__ : Time to wait in minutes between the end of an observation and starting housekeeping
 - __data__ : [details](#nsp-data)
 - __logging__ : [details](#nsp-logging)
 - __capture__ : [details](#nsp-capture)
 
 ##### NSP Data
 
-- __path__ :
-- __house_keeping__ :
-  - __delete_after__ :
+- __path__ : location to save the observations, this path will be appended to the root data path
+- __house_keeping__ : housekeeping configuration
+  - __delete_after__ : number of days to keep archived observation data, if set to 0 then no data is ever deleted
 
 ##### NSP Logging
 
-- __file__ :
-- __level__ :
+- __file__ : set the name of the logging file for the Night Sky Pi
+- __level__ : override the logging level of the Night Sky Pi logging file
 
 ##### NSP Capture
 
-- __shutter__ :
-  - __initial__ :
-  - __slowest__ :
-  - __fastest__ :
-- __gain__ :
-  - __initial__ :
-  - __lowest__ :
-  - __highest__ :
-- __white_balance__ :
-  - __red__ :
-  - __blue__ :
-- __exposure__ :
-  - __target__ :
-  - __delay__ :
-  - __tolerance__ :
-- __format__ :
-  - __file__ :
-- __timeout_seconds__:
+- __shutter__ : Shutter speed time of exposure in microseconds
+  - __initial__ : Starting shutter speed in microseconds
+  - __slowest__ : Slowest allowed shutter speed in microseconds
+  - __fastest__ : Fastest allowed shutter speed in microseconds
+- __gain__ : Sensitivity of the camera sensor
+  - __initial__ : Starting gain represented as a double
+  - __lowest__ : Lowest gain represented as a double
+  - __highest__ : Highest gain represented as a double
+- __white_balance__ : The white balance settings
+  - __red__ : Amount of red used for white balance represented as a double
+  - __blue__ : Amount of blue used for white balance represented as a double
+- __exposure__ : Desired exposure settings
+  - __target__ : The desired brightness of the image represented as a double 0.00 black while 1.00 white
+  - __delay__ : The time between taking images in seconds
+  - __tolerance__ : Different between the image brightness and target exposure before recalculating new image capture settings
+- __format__ : Options to save the captured image
+  - __file__ : currently only supports "jpg"
+- __timeout_seconds__: Time to state that the image capture failed default is 90 seconds. This should always be more than the slowest shutter speed.
 
 ## Running Night Sky Pi
 
