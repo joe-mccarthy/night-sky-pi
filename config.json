@@ -6,7 +6,7 @@
             "longitude" : 0.11158
         },
         "mqtt" : {
-            "enabled": true,
+            "enabled": false,
             "host": "127.0.0.1"
         }
     },

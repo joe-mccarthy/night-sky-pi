@@ -4,9 +4,9 @@ After=network.target
 
 [Service]
 Type=Simple
-User=YourUser
-WorkingDirectory=/home/joseph/repositories/night-sky-pi
-ExecStart=/home/joseph/repositories/night-sky-pi/nsp.sh /home/joseph/config.json
+User=username
+WorkingDirectory=/home/username/repositories/night-sky-pi
+ExecStart=/home/username/repositories/night-sky-pi/nsp.sh /home/username/config.json
 Restart=on-failure
 
 [Install]

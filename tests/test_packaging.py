@@ -44,9 +44,10 @@ def test_perform_packaging_with_packaging_required(
     )
     mock_data_directory_contents.assert_called_once_with(config)
     mock_zip_folder.assert_called_once_with(
-        "folder1", f"{config.data.path}/{config.nsp.data.path}", "folder1"
+        "folder1", f"{config.data.path}/{config.nsp.data.path}", "folder1", "zip"
     )
     mock_delete_folder.assert_called_once_with("folder1")
+    mock_publish_message.assert_called_once()
 
 
 @patch("src.app.packaging.os.path.exists")
@@ -62,10 +63,11 @@ def test_is_packaging_required_with_non_existing_data_location(mock_exists):
 @patch("src.app.packaging.shutil")
 def test___zip_folder(mock_exists):
     source = "folder1"
+    package_format = "zip"
     root = "/data/path/nsp/data/path"
     base = "folder1"
 
-    __zip_folder(source, root, base)
+    __zip_folder(source, root, base, package_format)
 
     mock_exists.make_archive.assert_called_once_with(
         "folder1", "zip", "/data/path/nsp/data/path", "folder1"
