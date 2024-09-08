@@ -23,11 +23,12 @@ def perform_packaging(config: ObservatoryConfig) -> None:
         publish_message(
             config=config.device.mqtt,
             topic="nsp/archive-completed",
-            message=
-                {"name": folder_name,
-                 "format": package_format,
-                 "folder": data_location,
-                 "path": f"{data_location}/{folder_name}.{package_format}"}
+            message={
+                "name": folder_name,
+                "format": package_format,
+                "folder": data_location,
+                "path": f"{data_location}/{folder_name}.{package_format}",
+            },
         )
         __delete_folder(item)
         log.info("packaging of %s completed", item)
@@ -70,9 +71,9 @@ def is_packaging_required(data_location: str) -> bool:
 
 
 def __zip_folder(source, root, base, package_format) -> None:
-    log.debug("about to compress directory %s into %s.%s", base,base, package_format)
+    log.debug("about to compress directory %s into %s.%s", base, base, package_format)
     shutil.make_archive(source, package_format, root, base)
-    log.info("completed compression of %s into %s.%s", base, base,package_format)
+    log.info("completed compression of %s into %s.%s", base, base, package_format)
 
 
 def __delete_folder(path: str) -> None:
