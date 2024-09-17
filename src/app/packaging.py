@@ -28,6 +28,7 @@ def perform_packaging(config: ObservatoryConfig) -> None:
                 "format": package_format,
                 "folder": data_location,
                 "path": f"{data_location}/{folder_name}.{package_format}",
+                "notification": f"{config.device.name} : Archive completed for {folder_name}",
             },
         )
         __delete_folder(item)

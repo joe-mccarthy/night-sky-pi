@@ -49,7 +49,8 @@ def perform_housekeeping(config: ObservatoryConfig) -> None:
         publish_message(
             config=config.device.mqtt,
             topic="nsp/file-deleted",
-            message={"file": item},
+            message={"file": item, 
+            "notification": f"{config.device.name} : File deleted by housekeeping"}
         )
         log.info("deleted file %s", item)
 
