@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0]
+
 ### Added
 
 - [#19](https://github.com/joe-mccarthy/night-sky-pi/issues/19) added a notification field to the mqtt message payload, apart from when an image is captured.
@@ -38,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial Testing Release
 
-[unreleased]: https://github.com/joe-mccarthy/night-sky-pi/compare/1.0.0...HEAD
+[unreleased]: https://github.com/joe-mccarthy/night-sky-pi/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/joe-mccarthy/night-sky-pi/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/joe-mccarthy/night-sky-pi/compare/0.1.0...1.0.0
 [0.1.0]: https://github.com/joe-mccarthy/night-sky-pi/releases/tag/0.1.0
