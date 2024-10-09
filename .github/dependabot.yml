@@ -8,6 +8,8 @@ updates:
   - dependency-name: "suntime" # Known to be broken after this version
   - dependency-name: "astroid" # highest it can be for python 3.8
   - dependency-name: "pylint" # highest it can be for python 3.8
+  - dependency-name: "black" # highest it can be for python 3.8
+  - dependency-name: "coverage" # highest it can be for python 3.8
   groups:
     python-packages:
       patterns:
