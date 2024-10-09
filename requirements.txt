@@ -1,14 +1,14 @@
 astroid==3.2.4
-black==24.8.0
+black==24.10.0
 cachetools==5.5.0
 chardet==5.2.0
 click==8.1.7
 colorama==0.4.6
-coverage==7.6.1
+coverage==7.6.2
 dataclass-wizard==0.23.0
 dataclasses-json==0.6.7
 dill==0.3.9
-distlib==0.3.8
+distlib==0.3.9
 exceptiongroup==1.2.2
 filelock==3.16.1
 freezegun==1.5.1
@@ -33,7 +33,7 @@ python-dateutil==2.9.0.post0
 python-magic==0.4.27
 six==1.16.0
 suntime==1.2.5
-tomli==2.0.1
+tomli==2.0.2
 tomlkit==0.13.2
 typing-inspect==0.9.0
 typing_extensions==4.12.2
