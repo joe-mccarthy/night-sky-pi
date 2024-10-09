@@ -35,11 +35,13 @@ def perform_observation(
     publish_message(
         config=mqtt_config,
         topic="nsp/observation-ended",
-        message=__get_observation_message(configuration,observation,finished=True)
+        message=__get_observation_message(configuration, observation, finished=True),
     )
 
 
-def __get_observation_message(config:ObservatoryConfig, observation: Observation, finished = False) -> dict:
+def __get_observation_message(
+    config: ObservatoryConfig, observation: Observation, finished=False
+) -> dict:
     json_data = {
         "observation": {
             "date": observation.period.date,
@@ -52,7 +54,7 @@ def __get_observation_message(config:ObservatoryConfig, observation: Observation
             "observation_image_path": observation.data_config.observation_image_path,
             "observation_data_path": observation.data_config.observation_data_path,
         },
-        "notification": f"{config.device.name} : Observation {'completed' if finished else 'started'} for {observation.period.date}"
+        "notification": f"{config.device.name} : Observation {'completed' if finished else 'started'} for {observation.period.date}",
     }
     return json_data
 
