@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Updated dependences
+- [#22](https://github.com/joe-mccarthy/night-sky-pi/issues/22) removed support for Python 3.8 as end of life.
+
 ## [1.1.0]
 
 ### Added

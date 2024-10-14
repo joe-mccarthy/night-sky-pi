@@ -23,10 +23,10 @@ Before deploying the Night Sky Pi it's important to ensure that you have the fol
 
 Night Sky Pi is written in Python and has been tested with the following Python versions:
 
-- Python 3.8
 - Python 3.9
 - Python 3.10
 - Python 3.11
+- Python 3.12
 
 The [nsp.sh](nsp.sh) runs within a virtual environment based on what's on your system path.
 
