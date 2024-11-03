@@ -78,6 +78,9 @@ def __capture_image(
     )
     switches = "-n --immediate --denoise cdn_hq "
     command = "libcamera-still "
+    
+    if capture.size.width != 0 and capture.size.height != 0:
+        switches += f"--width {capture.size.width} --height {capture.size.height} "
 
     call = f"{command} -o {filename} {exposure_settings} {white_balance} {switches}"
 

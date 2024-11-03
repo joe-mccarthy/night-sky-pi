@@ -57,6 +57,10 @@
                 "delay": 5,
                 "tolerance": 0.1
             },
+            "size": {
+                "width": 3040,
+                "height": 3040
+            },
             "format" : {
                 "file" : "jpg"
             },

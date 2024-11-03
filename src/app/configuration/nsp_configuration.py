@@ -39,6 +39,11 @@ class CaptureFormat(JSONWizard):
 
 
 @dataclass
+class ImageSize(JSONWizard):
+    width: Optional[int] = 0
+    height: Optional[int] = 0
+    
+@dataclass
 class Capture(JSONWizard):
     shutter: Shutter = field(default_factory=Shutter)
     white_balance: WhiteBalance = field(default_factory=WhiteBalance)
@@ -46,6 +51,7 @@ class Capture(JSONWizard):
     format: CaptureFormat = field(default_factory=CaptureFormat)
     gain: Gain = field(default_factory=Gain)
     timeout: Optional[int] = 100
+    size: ImageSize = field(default_factory=ImageSize)
 
 
 @dataclass
