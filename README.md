@@ -19,17 +19,6 @@ Night Sky Pi has been created with certain hardware in mind. Wanting to keep the
 
 Before deploying the Night Sky Pi it's important to ensure that you have the following configured as there are dependencies. However the installation of an MQTT broker is optional I usually have it installed instead of needing to remember to do it when starting up other applications.
 
-### Python
-
-Night Sky Pi is written in Python and has been tested with the following Python versions:
-
-- Python 3.9
-- Python 3.10
-- Python 3.11
-- Python 3.12
-
-The [nsp.sh](nsp.sh) runs within a virtual environment based on what's on your system path.
-
 ### MQTT Broker
 
 Night Sky Pi has the ability to publish events to an MQTT broker. The intent of this is so that other modules can react to the events to complete additional actions. Initially this broker will only run locally therefore only allow clients that reside on the same device as intended. Firstly we need to install MQTT on the Raspberry Pi.
@@ -135,8 +124,7 @@ The json file structure is as follows:
 It's recommended that Night Sky Pi is run as a service. This ensures that it doesn't stop of user logging off and on system restarts to do this carry out the following.
 
 ```bash
-# current working directory is the night sky pi repository.
-sudo cp nsp.service /etc/systemd/system/nsp.service
+pip install night-sky-pi
 sudo nano /etc/systemd/system/nsp.service
 ```
 
@@ -151,11 +139,11 @@ After=network.target
 Type=Simple
 # update this to be your current user
 User=username 
-# the location of the night sky pi repository
-WorkingDirectory=/home/username/repositories/night-sky-pi 
+# the location of the night sky to work in
+WorkingDirectory=/home/username
 # update these paths to be the location of the nsp.sh 
 # update argument to where you previously copied the json configuration.
-ExecStart=/home/username/repositories/night-sky-pi/nsp.sh /home/username/config.json 
+ExecStart=night-sky-pi -c /home/username/config.json 
 Restart=on-failure
 
 [Install]
