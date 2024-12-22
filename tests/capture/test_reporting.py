@@ -1,5 +1,5 @@
 from unittest.mock import MagicMock
-from src.app.capture.reporting import create_json_file
+from night_sky_pi.app.capture.reporting import create_json_file
 import json
 
 

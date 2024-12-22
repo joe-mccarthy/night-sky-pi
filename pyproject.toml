@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "night_sky_pi"
+version = "2.0.0"
+description = "Capture images from sunset till sunrise for processing off device."
+authors = ["Joe McCarthy <179146301+joe-mccarthy@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+suntime = "1.2.5"
+paho-mqtt = "^2.1.0"
+dataclasses-json = "^0.6.7"
+dataclass-wizard = "^0.33.0"
+python-magic = "^0.4.27"
+pillow = "^11.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = "^24.10.0"
+freezegun = "^1.5.1"
+pytest-mock = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+night-sky-pi = "night_sky_pi.entry:night_sky_pi"

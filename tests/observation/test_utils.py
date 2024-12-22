@@ -1,9 +1,9 @@
 import pytest
 from unittest.mock import MagicMock
 from datetime import datetime
-from src.app.configuration.core_configuration import LocationConfig
-from src.app.observation.data import Observation
-from src.app.observation.utils import __get_sun_data, get_observation
+from night_sky_pi.app.configuration.core_configuration import LocationConfig
+from night_sky_pi.app.observation.data import Observation
+from night_sky_pi.app.observation.utils import __get_sun_data, get_observation
 
 # Define a list of locations and dates for testing
 locations_and_dates = [

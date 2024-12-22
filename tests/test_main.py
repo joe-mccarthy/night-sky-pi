@@ -1,17 +1,17 @@
 from unittest.mock import MagicMock, patch
 from datetime import datetime, timedelta
 from freezegun import freeze_time
-from src.app.main import run
+from night_sky_pi.entry import run
 
 
-@patch("src.app.main.build_configuration")
-@patch("src.app.main.get_observation")
-@patch("src.app.main.setup_observation_filesystem")
-@patch("src.app.main.perform_observation")
-@patch("src.app.main.perform_housekeeping")
-@patch("src.app.main.perform_packaging")
-@patch("src.app.main.sleep")
-@patch("src.app.main.datetime")
+@patch("night_sky_pi.app.main.build_configuration")
+@patch("night_sky_pi.app.main.get_observation")
+@patch("night_sky_pi.app.main.setup_observation_filesystem")
+@patch("night_sky_pi.app.main.perform_observation")
+@patch("night_sky_pi.app.main.perform_housekeeping")
+@patch("night_sky_pi.app.main.perform_packaging")
+@patch("night_sky_pi.app.main.sleep")
+@patch("night_sky_pi.app.main.datetime")
 def test_run_within_observation_period(
     mock_datetime,
     mock_sleep,
@@ -46,14 +46,14 @@ def test_run_within_observation_period(
     mock_perform_packaging.assert_not_called()
 
 
-@patch("src.app.main.build_configuration")
-@patch("src.app.main.get_observation")
-@patch("src.app.main.setup_observation_filesystem")
-@patch("src.app.main.perform_observation")
-@patch("src.app.main.perform_housekeeping")
-@patch("src.app.main.perform_packaging")
-@patch("src.app.main.sleep")
-@patch("src.app.main.datetime")
+@patch("night_sky_pi.app.main.build_configuration")
+@patch("night_sky_pi.app.main.get_observation")
+@patch("night_sky_pi.app.main.setup_observation_filesystem")
+@patch("night_sky_pi.app.main.perform_observation")
+@patch("night_sky_pi.app.main.perform_housekeeping")
+@patch("night_sky_pi.app.main.perform_packaging")
+@patch("night_sky_pi.app.main.sleep")
+@patch("night_sky_pi.app.main.datetime")
 def test_run_not_within_observation_period(
     mock_datetime,
     mock_sleep,

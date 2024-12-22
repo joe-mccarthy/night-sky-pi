@@ -1,6 +1,6 @@
 import os
 from unittest.mock import MagicMock, call
-from src.app.observation.filesystem import setup_observation_filesystem
+from night_sky_pi.app.observation.filesystem import setup_observation_filesystem
 
 
 def test_setup_observation_filesystem_directory_exists(mocker):

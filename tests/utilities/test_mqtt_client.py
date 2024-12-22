@@ -1,6 +1,6 @@
 from unittest.mock import patch
-from src.app.utilities.mqtt_client import publish_message
-from src.app.configuration.core_configuration import MQTTConfig
+from night_sky_pi.app.utilities.mqtt_client import publish_message
+from night_sky_pi.app.configuration.core_configuration import MQTTConfig
 
 
 @patch("paho.mqtt.client.Client")

@@ -1,6 +1,6 @@
 import argparse
 
-from app.main import run
+from .app.main import run
 
 
 def night_sky_pi():
@@ -9,6 +9,3 @@ def night_sky_pi():
     arguments = parser.parse_args(None)
     run(arguments)
 
-
-if __name__ == "__main__":
-    night_sky_pi()

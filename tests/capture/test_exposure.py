@@ -1,10 +1,10 @@
 import math
 from unittest.mock import patch, MagicMock
-from src.app.capture.exposure import calculate_next_exposure_value
-from src.app.configuration.nsp_configuration import Capture
+from night_sky_pi.app.capture.exposure import calculate_next_exposure_value
+from night_sky_pi.app.configuration.nsp_configuration import Capture
 
 
-@patch("src.app.capture.exposure.calculate_average_brightness")
+@patch("night_sky_pi.app.capture.exposure.calculate_average_brightness")
 def test_brightness_below_lower_threshold(mock_calculate_average_brightness):
     # Arrange
     mock_calculate_average_brightness.return_value = 0.17
@@ -26,7 +26,7 @@ def test_brightness_below_lower_threshold(mock_calculate_average_brightness):
     assert math.isclose(capture.gain.current, 1.0)
 
 
-@patch("src.app.capture.exposure.calculate_average_brightness")
+@patch("night_sky_pi.app.capture.exposure.calculate_average_brightness")
 def test_brightness_above_upper_threshold(mock_calculate_average_brightness):
     # Arrange
     mock_calculate_average_brightness.return_value = 0.25
@@ -48,7 +48,7 @@ def test_brightness_above_upper_threshold(mock_calculate_average_brightness):
     assert math.isclose(capture.gain.current, 1.0)
 
 
-@patch("src.app.capture.exposure.calculate_average_brightness")
+@patch("night_sky_pi.app.capture.exposure.calculate_average_brightness")
 def test_brightness_above_upper_threshold_gain(mock_calculate_average_brightness):
     # Arrange
     mock_calculate_average_brightness.return_value = 0.25
@@ -70,7 +70,7 @@ def test_brightness_above_upper_threshold_gain(mock_calculate_average_brightness
     assert math.isclose(capture.gain.current, 6.6, rel_tol=0.5)
 
 
-@patch("src.app.capture.exposure.calculate_average_brightness")
+@patch("night_sky_pi.app.capture.exposure.calculate_average_brightness")
 def test_brightness_below_lower_threshold_gain(mock_calculate_average_brightness):
     # Arrange
     mock_calculate_average_brightness.return_value = 0.05
@@ -92,7 +92,7 @@ def test_brightness_below_lower_threshold_gain(mock_calculate_average_brightness
     assert math.isclose(capture.gain.current, 1.1, rel_tol=0.5)
 
 
-@patch("src.app.capture.exposure.calculate_average_brightness")
+@patch("night_sky_pi.app.capture.exposure.calculate_average_brightness")
 def test_brightness_within_tolerance(mock_calculate_average_brightness):
     # Arrange
     mock_calculate_average_brightness.return_value = 0.21

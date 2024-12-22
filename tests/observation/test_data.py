@@ -1,5 +1,5 @@
 from datetime import datetime
-from src.app.observation.data import (
+from night_sky_pi.app.observation.data import (
     Period,
     ModuleDataConfig,
     HouseKeeping,

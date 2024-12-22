@@ -1,9 +1,9 @@
 from unittest.mock import patch, MagicMock
-from src.application import night_sky_pi
+from night_sky_pi.entry import night_sky_pi
 
 
 @patch("argparse.ArgumentParser.parse_args")
-@patch("src.application.run")
+@patch("night_sky_pi.entry.run")
 def test_night_sky_pi(mock_run, mock_parse_args):
     # Arrange
     mock_args = MagicMock()

@@ -1,4 +1,4 @@
-from src.app.utilities import conversions
+from night_sky_pi.app.utilities import conversions
 import math
 
 

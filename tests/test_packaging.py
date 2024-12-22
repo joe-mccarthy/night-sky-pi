@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
-from src.app.utilities.mqtt_client import publish_message
-from src.app.packaging import (
+from night_sky_pi.app.utilities.mqtt_client import publish_message
+from night_sky_pi.app.packaging import (
     perform_packaging,
     is_packaging_required,
     __zip_folder,
@@ -8,9 +8,9 @@ from src.app.packaging import (
 )
 
 
-@patch("src.app.packaging.is_packaging_required")
+@patch("night_sky_pi.app.packaging.is_packaging_required")
 def test_perform_packaging_no_packaging_required(mock_is_packaging_required):
-    config = MagicMock() @ patch("src.app.packaging.log")
+    config = MagicMock() @ patch("night_sky_pi.app.packaging.log")
 
     mock_is_packaging_required.return_value = False
 
@@ -21,11 +21,11 @@ def test_perform_packaging_no_packaging_required(mock_is_packaging_required):
     )
 
 
-@patch("src.app.packaging.publish_message")
-@patch("src.app.packaging.is_packaging_required")
-@patch("src.app.packaging.data_directory_contents")
-@patch("src.app.packaging.__zip_folder")
-@patch("src.app.packaging.__delete_folder")
+@patch("night_sky_pi.app.packaging.publish_message")
+@patch("night_sky_pi.app.packaging.is_packaging_required")
+@patch("night_sky_pi.app.packaging.data_directory_contents")
+@patch("night_sky_pi.app.packaging.__zip_folder")
+@patch("night_sky_pi.app.packaging.__delete_folder")
 def test_perform_packaging_with_packaging_required(
     mock_delete_folder,
     mock_zip_folder,
@@ -50,7 +50,7 @@ def test_perform_packaging_with_packaging_required(
     mock_publish_message.assert_called_once()
 
 
-@patch("src.app.packaging.os.path.exists")
+@patch("night_sky_pi.app.packaging.os.path.exists")
 def test_is_packaging_required_with_non_existing_data_location(mock_exists):
     data_location = "/data/path"
     mock_exists.return_value = False
@@ -60,7 +60,7 @@ def test_is_packaging_required_with_non_existing_data_location(mock_exists):
     assert result is False
 
 
-@patch("src.app.packaging.shutil")
+@patch("night_sky_pi.app.packaging.shutil")
 def test___zip_folder(mock_exists):
     source = "folder1"
     package_format = "zip"
@@ -74,7 +74,7 @@ def test___zip_folder(mock_exists):
     )
 
 
-@patch("src.app.packaging.shutil.rmtree")
+@patch("night_sky_pi.app.packaging.shutil.rmtree")
 def test___delete_folder(mock_rmtree):
     path = "folder1"
     __delete_folder(path)
