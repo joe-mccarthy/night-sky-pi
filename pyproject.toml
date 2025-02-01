@@ -15,7 +15,7 @@ python = "^3.12"
 suntime = "1.2.5"
 paho-mqtt = "^2.1.0"
 dataclasses-json = "^0.6.7"
-dataclass-wizard = ">=0.33,<0.35"
+dataclass-wizard = ">=0.33,<0.36"
 python-magic = "^0.4.27"
 pillow = "^11.0.0"
 
