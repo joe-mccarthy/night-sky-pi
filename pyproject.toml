@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "night-sky-pi"
-version = "2.0.2"
+version = "2.0.3"
 description = "Capture images from sunset till sunrise for processing off device."
 authors = ["Joe McCarthy <179146301+joe-mccarthy@users.noreply.github.com>"]
 maintainers = ["Joe McCarthy <179146301+joe-mccarthy@users.noreply.github.com>"]
